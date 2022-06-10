@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/frameworks/jquery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/ubiquity-dev" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/ubiquity" />
+      <path value="$PROJECT_DIR$/vendor/prismjs/prism" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/ubiquity-webtools" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/ubiquity-debug" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/ubiquity-attributes" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpmv/php-mv-ui" />
+      <path value="$PROJECT_DIR$/vendor/czproject/git-php" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+</project>

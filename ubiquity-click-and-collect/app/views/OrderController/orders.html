@@ -1,0 +1,44 @@
+<div id="load">
+{% for order in orders %}
+    {% if order.orderdetails is not empty %}
+        <table class="ui celled table">
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantite</th>
+                <th>préparée</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in order.orderdetails %}
+                <tr>
+                    <td data-label="Produit">{{ item.product.name }} </td>
+                    <td data-label="Quantite">{{ item.quantity }}</td>
+                    <td data-label="Section" >
+                        <div class="ui checkbox ">
+                            <input type="checkbox" name="example" class="validate" data-ajax="[{{ item.idOrder }},{{ item.idProduct }}]"
+                                    {{ item.prepared ? 'checked' : '' }}>
+                            <label></label>
+                        </div></td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    {% endif %}
+{% endfor %}
+<button id="send" class="ui primary button hidden">
+    Save
+</button>
+<style>
+    .hidden{
+        display: none!important;
+    }
+    #send{
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+    }
+</style>
+{{ script_foot | raw }}
+</div>

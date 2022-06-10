@@ -1,0 +1,31 @@
+<div id="load">
+    <form class="ui form" action="/OrderController/search" method="post">
+        <div class="field">
+            <label>Rechercher</label>
+            <input type="text" name="q" >
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+        <table class="ui celled table">
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantite</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td data-label="Produit"> {{ product.name }}</td>
+                    <td data-label="Quantite">{{ product.stock }}</td>
+                    <td data-label="Section" >{{ product.comments }}
+                       </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+{{ script_foot | raw }}
+</div>

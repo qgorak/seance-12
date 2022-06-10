@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('search') }}
+{% endblock %}
+
+{% block body_id 'blog_search' %}
+
+{% block main %}
+
+  <div class="head">
+  	<div class="ui container">
+  		<div class="ui pointing inverted menu">
+
+  		  <a class="item" href="/orders">
+                Orders
+  		  </a>
+              <a class="item" href="order/get/3">
+                  Detail order
+              </a>
+              <a class="item" href="basket/2">
+                  Detail panier
+              </a>
+              <a class="item" href="/search">
+                  Recherche
+              </a>
+  		</div>
+  	</div>
+  </div>
+{% endblock %}
+

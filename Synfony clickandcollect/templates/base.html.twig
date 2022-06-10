@@ -1,0 +1,52 @@
+{#
+   This is the base template used as the application layout which contains the
+   common elements and decorates all the other templates.
+   See https://symfony.com/doc/current/templates.html#template-inheritance-and-layouts
+#}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{% block title %}Symfony Demo application{% endblock %}</title>
+        <link href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css" rel="stylesheet" nonce="" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        {#
+            Those two blocks defines frontend entrypoint for CSS and JavaScript assets
+            See https://symfony.com/doc/current/frontend.html
+        #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body id="{% block body_id %}{% endblock %}">
+
+        {% block header %}
+
+        {% endblock %}
+
+        <div class="container body-container">
+        <div class="ui container">
+            {% block body %}
+                <div class="row">
+                    <div id="main" class="col-sm-9">
+
+
+                        {% block main %}{% endblock %}
+                    </div>
+
+
+                </div>
+            {% endblock %}
+            </div>
+        </div>
+
+    </body>
+</html>

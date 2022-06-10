@@ -1,0 +1,22 @@
+<!--View associated to index action of OrderController controller -->
+
+
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>Produit</th>
+        <th>Quantite</th>
+        <th>Section</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in order.orderdetails %}
+        <tr>
+            <td data-label="Produit">{{ item.product.name }} </td>
+            <td data-label="Quantite">{{ item.quantity }}</td>
+            <td data-label="Section">{{ item.product.section.name }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>

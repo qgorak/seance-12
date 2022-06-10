@@ -1,0 +1,2 @@
+<?php
+return array("id"=>[["type"=>"id","constraints"=>["autoinc"=>true]]],"dateCreation"=>[["type"=>"notNull","constraints"=>[]]],"status"=>[["type"=>"length","constraints"=>["max"=>100,"notNull"=>true]]],"amount"=>[["type"=>"notNull","constraints"=>[]]],"toPay"=>[["type"=>"notNull","constraints"=>[]]],"itemsNumber"=>[["type"=>"notNull","constraints"=>[]]],"missingNumber"=>[["type"=>"notNull","constraints"=>[]]]);

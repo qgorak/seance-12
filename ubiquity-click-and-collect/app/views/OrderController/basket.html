@@ -1,0 +1,25 @@
+<!--View associated to index action of OrderController controller -->
+<div id="load">
+
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>Produit</th>
+        <th>Quantite</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in basket.basketdetails %}
+        <tr>
+            <td data-label="Produit">{{ item.product.name }} </td>
+            <td data-label="Quantite">{{ item.quantity }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<button id="send" data-ajax="{{ basket.id }}" class="ui primary button hidden">
+    Validate
+</button>
+{{ script_foot | raw }}
+</div>

@@ -1,0 +1,97 @@
+
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('search') }}
+{% endblock %}
+
+{% block body_id 'blog_search' %}
+
+{% block main %}
+
+   <div id="load">
+   {% for order in orders %}
+       {% if order.idproduct is not empty %}
+           <table class="ui celled table">
+               <thead>
+               <tr>
+                   <th>Produit</th>
+                   <th>Quantite</th>
+                   <th>préparée</th>
+               </tr>
+               </thead>
+               <tbody>
+                 {% for item in order.orderdetails %}
+                          <tr>
+                              <td data-label="Produit">{{ item.product.name }} </td>
+                              <td data-label="Quantite">{{ item.quantity }}</td>
+                              <td data-label="Section" >
+                                  <div class="ui checkbox ">
+                                      <input type="checkbox" name="example" class="validate" data-ajax="[{{ order.id }},{{ item.product.id }}]"
+                                              {{ item.prepared ? 'checked' : '' }}>
+                                      <label></label>
+                                  </div></td>
+                          </tr>
+                      {% endfor %}
+
+               </tbody>
+           </table>
+       {% endif %}
+   {% endfor %}
+   <button id="send" class="ui primary button hidden">
+       Save
+   </button>
+   <style>
+       .hidden{
+           display: none!important;
+       }
+       #send{
+           position: fixed;
+           bottom: 32px;
+           right: 32px;
+       }
+   </style>
+   </div>
+<script>(function(){window.defer=function (method) {if (window.jQuery) method(); else setTimeout(function() { window.defer(method); }, 50);};window.defer(function(){$(function() {
+
+if (typeof getHref !== 'function'){function getHref(url) { return $('a').filter(function(){return $(this).prop('href') == url; });}}
+let myurl=window.location.href;if(window._previousURL) getHref(window._previousURL).removeClass('active');getHref(myurl).addClass('active');window._previousURL=myurl;
+window.arrayOrders = [];
+
+	$(".validate").change(function(event){
+
+        if($.inArray(event.target.getAttribute("data-ajax"), window.arrayOrders )<0) {
+        //add to array
+            window.arrayOrders .push(event.target.getAttribute("data-ajax")); // <- basic JS see Array.push
+        } else {
+        //remove from array
+         window.arrayOrders.splice($.inArray(event.target.getAttribute("data-ajax"), window.arrayOrders ),1); // <- basic JS see Array.splice
+        };
+        if(window.arrayOrders.length>0){
+            $("#send").removeClass("hidden");
+        }else{
+            $("#send").addClass("hidden");
+        }
+
+
+	});
+
+	$("#send").click(function(event){
+
+if(event && event.stopPropagation) event.stopPropagation();
+
+if(event && event.preventDefault) event.preventDefault();
+let url='http://127.0.0.1:8000/prepare';let self=this;
+		$("#load").append('<div class="ajax-loader ui active inverted dimmer"><div class="ui active centered inline text loader">Loading</div></div>');
+$.ajax({'url':url,'method':'POST','async':true,'data':$.param({ids:window.arrayOrders})}).done(function( data, textStatus, jqXHR ) {
+	$("#load").html( data );
+
+}).always(function( dataOrjqXHR, textStatus, jqXHROrerrorThrown ) {
+$('body').find('.ajax-loader').remove();});
+
+	});
+window.onpopstate = function(e){if(e.state){let target=e.state.jqueryDone;$(e.state.selector)[target](e.state.html);}};
+});})})();</script>
+{% endblock %}
+

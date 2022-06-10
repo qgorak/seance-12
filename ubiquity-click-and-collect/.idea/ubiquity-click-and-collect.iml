@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/frameworks/jquery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/ubiquity-dev" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/ubiquity" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/prismjs/prism" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/ubiquity-webtools" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/ubiquity-debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/ubiquity-attributes" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmv/php-mv-ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/czproject/git-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/vendor/phpmv/ubiquity/docs/_templates" />
+      </list>
+    </option>
+  </component>
+</module>
